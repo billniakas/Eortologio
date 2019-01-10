@@ -1,0 +1,2 @@
+#!/bin/bash
+python3 eortologio\ GTK.py && rm -rf __pychache__
