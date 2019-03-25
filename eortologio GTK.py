@@ -91,6 +91,8 @@ class MainWindow(Gtk.Window):
         #easter=subprocess.getoutput("./easter.sh "+year)  # κλήση του bash script
         message = easter.easter(date[0])                   # κλήση της συνάρτησης easter από το module easter
         self.label1.set_text(message)
+        self.label0.set_text(" ")
+        self.label_kinites.set_text(" ")
 
     def on_date_clicked(self, button):
         date=list(self.calendar.get_date())
