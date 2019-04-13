@@ -29,7 +29,7 @@ class MainWindow(Gtk.Window):
         pixbuf48 = Gtk.IconTheme.get_default().load_icon(self.icon, 48, 0)
         pixbuf64 = Gtk.IconTheme.get_default().load_icon(self.icon, 64, 0)
         pixbuf96 = Gtk.IconTheme.get_default().load_icon(self.icon, 96, 0)
-        self.set_icon_list([pixbuf24, pixbuf32, pixbuf48, pixbuf64, pixbuf96]);
+        self.set_icon_list([pixbuf24, pixbuf32, pixbuf48, pixbuf64, pixbuf96])
 
 
         # Προσθήκη Tray Icon
@@ -87,7 +87,7 @@ class MainWindow(Gtk.Window):
 
     def on_button_clicked(self, button):
         date=list(self.calendar.get_date())
-        year=str(date[0])
+        #year=str(date[0])
         #easter=subprocess.getoutput("./easter.sh "+year)  # κλήση του bash script
         message = easter.easter(date[0])                   # κλήση της συνάρτησης easter από το module easter
         self.label1.set_text(message)
@@ -232,12 +232,11 @@ class MainWindow(Gtk.Window):
             about_dialog.run()
             about_dialog.destroy()
             
-    def showhide():
-        if self.show_all() is True:
-            self.hide_on_delete()
-            
-        else:
-            self.show_all()
+    # def showhide():
+    #     if self.show_all() is True:
+    #         self.hide_on_delete()
+    #     else:
+    #         self.show_all()
 
 if __name__ == "__main__":
     win = MainWindow()
