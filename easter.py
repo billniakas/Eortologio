@@ -3,7 +3,8 @@ import datetime
 
 date=str(datetime.datetime.now().date()).replace("-","/")
 today=[date[0:4],date[5:7],date[8:10]]
-
+# print(date)
+# print(today)
 #############################################################################
 def easter(y):
     a=y%19
@@ -20,7 +21,7 @@ def easter(y):
         elif y > int(today[0]):
             return("Το Πάσχα το έτος {} θα είναι στις {} Απριλίου".format(y,day))
         else:
-            if int(date[2]) > month:
+            if int(today[2]) > day and int(today[1][1]) >= month :
                 return("Το Πάσχα φέτος ήταν στις {} Απριλίου".format(day))
             else:
                 return("Το Πάσχα φέτος θα είναι στις {} Απριλίου".format(day))
@@ -32,7 +33,7 @@ def easter(y):
         elif y > int(today[0]):
             return("Το Πάσχα το έτος {} θα είναι στις {} Μαϊου".format(y,day-30))
         else:
-            if int(date[2]) > month:
+            if int(today[2]) > day and int(today[1][1]) >= month :
                 return("Το Πάσχα φέτος ήταν στις {} Μαϊου".format(day-30))
             else:
                 return("Το Πάσχα φέτος θα είναι στις {} Μαϊου".format(day-30))
@@ -46,11 +47,13 @@ def kinites(y,mhnas, mera):
     e=((2*b)+(4*c)+(6*d))%7 
     day=3+d+e
 
+    # print(day)
+
     if day <= 30:
         
         month=4
     else:
-        day=30-day
+        day=day-30
         month=5
     
     # print(day,month)

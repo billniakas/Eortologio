@@ -233,10 +233,10 @@ class MainWindow(Gtk.Window):
             about_dialog.destroy()
             
     def showhide():
-        if self.show_all() is True:
-            self.hide_on_delete()
+        if Gtk.Window.show_all() is True:
+            Gtk.Window.hide_on_delete()
         else:
-            self.show_all()
+            Gtk.Window.show_all()
 
 if __name__ == "__main__":
     win = MainWindow()
