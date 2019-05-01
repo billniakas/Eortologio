@@ -120,7 +120,7 @@ class MainWindow(Gtk.Window):
             print(easter.kinites(year,month,day))
             self.label_kinites.set_text(easter.kinites(year,month,day))
             self.label_kinites.set_line_wrap(True)
-            self.label_kinites.set_justify(Gtk.Justification.LEFT)
+            #self.label_kinites.set_justify(Gtk.Justification.LEFT)
 
         else:
             self.label_kinites.set_text(" ")
@@ -233,10 +233,10 @@ class MainWindow(Gtk.Window):
             about_dialog.destroy()
             
     def showhide():
-        if Gtk.Window.show_all() is True:
-            Gtk.Window.hide_on_delete()
+        if Gtk.Window.iconify() is True:
+            Gtk.Window.deiconify()
         else:
-            Gtk.Window.show_all()
+            Gtk.Window.iconify()
 
 if __name__ == "__main__":
     win = MainWindow()
