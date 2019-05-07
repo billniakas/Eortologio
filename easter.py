@@ -21,7 +21,7 @@ def easter(y):
         elif y > int(today[0]):
             return("Το Πάσχα το έτος {} θα είναι στις {} Απριλίου".format(y,day))
         else:
-            if int(today[2]) > day and int(today[1][1]) >= month :
+            if datetime.datetime.now() > datetime.datetime(int(date[0:4]), 4, day):
                 return("Το Πάσχα φέτος ήταν στις {} Απριλίου".format(day))
             else:
                 return("Το Πάσχα φέτος θα είναι στις {} Απριλίου".format(day))
@@ -33,7 +33,7 @@ def easter(y):
         elif y > int(today[0]):
             return("Το Πάσχα το έτος {} θα είναι στις {} Μαϊου".format(y,day-30))
         else:
-            if int(today[2]) > day and int(today[1][1]) >= month :
+            if datetime.datetime.now() > datetime.datetime(int(date[0:4]), 5, day) :
                 return("Το Πάσχα φέτος ήταν στις {} Μαϊου".format(day-30))
             else:
                 return("Το Πάσχα φέτος θα είναι στις {} Μαϊου".format(day-30))
